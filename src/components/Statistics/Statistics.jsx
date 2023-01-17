@@ -1,4 +1,6 @@
-import css from './statistics.module.css';
+import css from './statistics.module.scss';
+import PropTypes from 'prop-types';
+
 const Statistics = ({ title, stats }) => {
   return (
     <section className={css.statistics}>
@@ -16,4 +18,12 @@ const Statistics = ({ title, stats }) => {
     </section>
   );
 };
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
+};
+
 export default Statistics;

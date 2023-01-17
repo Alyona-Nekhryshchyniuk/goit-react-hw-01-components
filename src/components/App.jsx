@@ -1,21 +1,28 @@
+import PropTypes from 'prop-types';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendList/FriendList';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
-import user from '../JSON/user.json';
-import data from '../JSON/data.json';
-import friends from '../JSON/friends.json';
-import transactions from '../JSON/transactions.json';
+import { user, data, friends, transactions } from '../JSON';
 
-export const App = () => {
+const App = () => {
   return (
     <div style={{ display: 'inline-flex', gap: 25, marginTop: 30 }}>
       <div>
         <Profile user={user} />
-        <Statistics stats={data} />
+        <Statistics stats={Array.from(data)} />
       </div>
-      <FriendList friends={friends} />
-      <TransactionHistory transactions={transactions} />
+      <FriendList friends={Array.from(friends)} />
+      <TransactionHistory transactions={Array.from(transactions)} />
     </div>
   );
 };
+
+App.propTypes = {
+  user: PropTypes.object,
+  data: PropTypes.objectOf(PropTypes.array.isRequired),
+  friends: PropTypes.objectOf(PropTypes.array.isRequired),
+  transactions: PropTypes.objectOf(PropTypes.array.isRequired),
+};
+
+export default App;
