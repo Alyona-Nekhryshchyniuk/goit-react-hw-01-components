@@ -1,9 +1,7 @@
 .statistics {
-  display: inline-flex;
   flex-direction: column;
   border: 1px solid rgb(88, 87, 87);
   border-radius: 5%;
-  margin-left: 50px;
   overflow: hidden;
 }
 .stat-list {

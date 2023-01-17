@@ -8,12 +8,13 @@
   border-radius: 3%;
   overflow: hidden;
   color: rgb(82, 79, 79);
+  margin-bottom: 30px;
 }
 
 .description {
   display: inline-flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 30px;
 }
 .stats {
   padding: 15px;
