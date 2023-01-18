@@ -1,3 +1,4 @@
+import Container from './Container.styled';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendList/FriendList';
@@ -6,7 +7,7 @@ import { user, data, friends, transactions } from '../JSON';
 
 const App = () => {
   return (
-    <div style={{ display: 'inline-flex', gap: 25, marginTop: 30 }}>
+    <Container>
       <div>
         <Profile user={user.default} />
         <Statistics stats={data.default} />
@@ -15,7 +16,7 @@ const App = () => {
 
       <FriendList friends={friends.default} />
       <TransactionHistory transactions={transactions.default} />
-    </div>
+    </Container>
   );
 };
 
