@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendList/FriendList';
@@ -9,20 +8,15 @@ const App = () => {
   return (
     <div style={{ display: 'inline-flex', gap: 25, marginTop: 30 }}>
       <div>
-        <Profile user={user} />
-        <Statistics stats={Array.from(data)} />
+        <Profile user={user.default} />
+        <Statistics stats={data.default} />
+        <Statistics title="This Is Statistics Title" stats={data.default} />
       </div>
-      <FriendList friends={Array.from(friends)} />
-      <TransactionHistory transactions={Array.from(transactions)} />
+
+      <FriendList friends={friends.default} />
+      <TransactionHistory transactions={transactions.default} />
     </div>
   );
-};
-
-App.propTypes = {
-  user: PropTypes.object,
-  data: PropTypes.objectOf(PropTypes.array.isRequired),
-  friends: PropTypes.objectOf(PropTypes.array.isRequired),
-  transactions: PropTypes.objectOf(PropTypes.array.isRequired),
 };
 
 export default App;

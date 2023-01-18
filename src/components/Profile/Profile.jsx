@@ -1,19 +1,15 @@
 import css from './profile.module.scss';
 import PropTypes from 'prop-types';
 
-const Profile = ({ username: name, tag, location, avatar, stats }) => {
-  console.log(Profile.propTypes);
-  // const { followers, views, likes } = stats;
-  // const {
-  //   username: name,
-  //   tag,
-  //   location,
-  //   avatar,
-  //   stats: { followers, views, likes },
-  // } = user;
-  console.log(tag);
-  console.log(stats);
-  console.log(likes);
+const Profile = ({ user }) => {
+  const {
+    username: name,
+    tag,
+    location,
+    avatar,
+    stats: { followers, views, likes },
+  } = user;
+
   return (
     <div className={css.profile}>
       <div className={css.description}>
@@ -41,17 +37,17 @@ const Profile = ({ username: name, tag, location, avatar, stats }) => {
   );
 };
 
-console.log(Profile.propTypes);
-
 Profile.propTypes = {
-  name: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired,
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }),
   }),
 };
 

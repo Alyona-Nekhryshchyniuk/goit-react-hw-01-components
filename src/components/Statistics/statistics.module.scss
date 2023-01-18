@@ -1,8 +1,12 @@
 .statistics {
   flex-direction: column;
   border: 1px solid rgb(88, 87, 87);
-  border-radius: 5%;
+  border-radius: 5px;
   overflow: hidden;
+
+  &:not(:first-of-type) {
+    margin-top: 15px;
+  }
 }
 .stat-list {
   padding: 15px;
@@ -20,6 +24,5 @@
 }
 
 .title {
-  font-weight: 700;
-  font-size: xx-large;
+  padding: 0 10px;
 }
